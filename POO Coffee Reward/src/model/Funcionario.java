@@ -24,7 +24,7 @@ public class Funcionario extends Pessoa {
         return cargo;
     }
 
-    public voi setCargo(String cargo) {
+    public void setCargo(String cargo) {
         this.cargo = cargo;
     }
 

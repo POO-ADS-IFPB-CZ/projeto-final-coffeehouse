@@ -2,6 +2,7 @@ package util;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ArquivoUtil {
 
@@ -50,5 +51,16 @@ public class ArquivoUtil {
         }
 
     }
+
+
+public class GeradorId {
+
+    public static <T> int gerarId(List<T> lista) {
+
+        return lista.size() + 1;
+
+    }
+
+}
 
 }
