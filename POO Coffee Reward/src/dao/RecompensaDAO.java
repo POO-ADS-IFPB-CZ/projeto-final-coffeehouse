@@ -54,4 +54,8 @@ public class RecompensaDAO {
         }
         return removido;
     }
+
+    public ArrayList<Recompensa> listar(){
+        return recompensas;
+}
 }
