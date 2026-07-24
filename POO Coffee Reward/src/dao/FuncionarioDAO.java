@@ -54,4 +54,8 @@ public class FuncionarioDAO {
         }
         return removido;
     }
+
+    public ArrayList<Funcionario> listar(){
+        return funcionarios;
+    }
 }
