@@ -8,7 +8,6 @@ import javax.swing.table.DefaultTableModel;
 
 public class TelaFuncionarios extends JFrame {
 
-    // Labels
     private JLabel lbNome;
     private JLabel lbCpf;
     private JLabel lbTelefone;
@@ -17,7 +16,6 @@ public class TelaFuncionarios extends JFrame {
     private JLabel lbLogin;
     private JLabel lbSenha;
 
-    // Campos
     private JTextField txtNome;
     private JTextField txtCpf;
     private JTextField txtTelefone;
@@ -26,17 +24,14 @@ public class TelaFuncionarios extends JFrame {
     private JTextField txtLogin;
     private JTextField txtSenha;
 
-    // Botões
     private JButton btCadastrar;
     private JButton btEditar;
     private JButton btExcluir;
     private JButton btLimpar;
 
-    // Tabela
     private JTable tabela;
     private DefaultTableModel modelo;
 
-    // DAO
     private FuncionarioDAO funcionarioDAO;
 
     public TelaFuncionarios() {
@@ -49,7 +44,6 @@ public class TelaFuncionarios extends JFrame {
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setLayout(null);
 
-        // Labels
         lbNome = new JLabel("Nome:");
         lbCpf = new JLabel("CPF:");
         lbTelefone = new JLabel("Telefone:");
@@ -58,7 +52,6 @@ public class TelaFuncionarios extends JFrame {
         lbLogin = new JLabel("Login:");
         lbSenha = new JLabel("Senha:");
 
-        // Campos
         txtNome = new JTextField();
         txtCpf = new JTextField();
         txtTelefone = new JTextField();
@@ -67,13 +60,11 @@ public class TelaFuncionarios extends JFrame {
         txtLogin = new JTextField();
         txtSenha = new JTextField();
 
-        // Botões
         btCadastrar = new JButton("Cadastrar");
         btEditar = new JButton("Editar");
         btExcluir = new JButton("Excluir");
         btLimpar = new JButton("Limpar");
 
-        // Posições
         lbNome.setBounds(30,30,100,25);
         lbCpf.setBounds(30,70,100,25);
         lbTelefone.setBounds(30,110,100,25);
@@ -95,7 +86,6 @@ public class TelaFuncionarios extends JFrame {
         btExcluir.setBounds(450,110,120,30);
         btLimpar.setBounds(450,150,120,30);
 
-        // Tabela
         modelo = new DefaultTableModel();
 
         modelo.addColumn("ID");
@@ -108,7 +98,6 @@ public class TelaFuncionarios extends JFrame {
         JScrollPane scroll = new JScrollPane(tabela);
         scroll.setBounds(30,330,760,200);
 
-        // Adicionando
         add(lbNome);
         add(lbCpf);
         add(lbTelefone);
