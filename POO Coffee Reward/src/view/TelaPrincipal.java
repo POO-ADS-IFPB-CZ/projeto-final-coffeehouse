@@ -26,10 +26,16 @@ public class TelaPrincipal extends JFrame{
         btRecompensas = new JButton("Recompensas");
         btSair = new JButton("Sair");
 
-         btClientes.addActionListener(e -> {
+        btFuncionarios.addActionListener(e -> {
+            new TelaFuncionarios().setVisible(true);
+        });
 
+        btRecompensas.addActionListener(e -> {
+            new TelaRecompensas().setVisible(true);
+        });
+
+        btClientes.addActionListener(e -> {
             new TelaClientes().setVisible(true);
-
         });
 
         btClientes.setBounds(280, 70, 220, 40);

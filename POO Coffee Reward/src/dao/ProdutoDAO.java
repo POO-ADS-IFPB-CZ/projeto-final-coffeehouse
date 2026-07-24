@@ -54,4 +54,9 @@ public class ProdutoDAO {
         }
         return removido;
     }
+
+    public ArrayList<Produto> listar() {
+    return produtos;
+}
+
 }
