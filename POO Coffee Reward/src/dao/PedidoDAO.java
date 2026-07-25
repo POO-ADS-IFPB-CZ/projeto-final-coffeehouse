@@ -54,4 +54,9 @@ public class PedidoDAO {
         }
         return removido;
     }
+
+    public ArrayList<Pedido> listar() {
+        return pedidos;
+    }
+
 }

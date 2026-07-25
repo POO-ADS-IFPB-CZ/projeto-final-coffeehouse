@@ -83,6 +83,8 @@ public class TelaClientes extends JFrame {
         modelo.addColumn("Nome");
         modelo.addColumn("CPF");
         modelo.addColumn("Pontos");
+        modelo.addColumn("Telefone");
+        modelo.addColumn("Email");
 
         tabela = new JTable(modelo);
 
@@ -109,6 +111,25 @@ public class TelaClientes extends JFrame {
 
         add(scroll);
 
+        btCadastrar.addActionListener(e -> {
+
+        Cliente cliente = new Cliente();
+
+        cliente.setId(clienteDAO.listar().size() + 1);
+        cliente.setNome(txtNome.getText());
+        cliente.setCpf(txtCpf.getText());
+        cliente.setTelefone(txtTelefone.getText());
+        cliente.setEmail(txtEmail.getText());
+        cliente.setPontos(Integer.parseInt(txtPontos.getText()));
+
+        clienteDAO.inserir(cliente);
+
+        atualizarTabela();
+        limparCampos();
+
+    });
+
+
         atualizarTabela();
 
     }
@@ -124,6 +145,8 @@ public class TelaClientes extends JFrame {
             cliente.getId(),
             cliente.getNome(),
             cliente.getCpf(),
+            cliente.getTelefone(),
+            cliente.getEmail(),
             cliente.getPontos()
 
         });
@@ -131,5 +154,15 @@ public class TelaClientes extends JFrame {
     }
 
 }
+
+    private void limparCampos() {
+
+        txtNome.setText("");
+        txtCpf.setText("");
+        txtTelefone.setText("");
+        txtEmail.setText("");
+        txtPontos.setText("");
+
+    }
 
 }
