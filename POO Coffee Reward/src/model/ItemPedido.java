@@ -22,7 +22,7 @@ public class ItemPedido implements Serializable {
         this.produto = produto;
         this.quantidade = quantidade;
         this.precoUnitario = precoUnitario;
-        this.subtotal = quantidade * subtotal;
+        this.subtotal = quantidade * precoUnitario;
     }
 
     public int getId() {

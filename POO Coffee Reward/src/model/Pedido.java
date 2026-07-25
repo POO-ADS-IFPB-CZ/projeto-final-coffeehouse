@@ -17,6 +17,10 @@ public class Pedido implements Serializable {
     private ArrayList<ItemPedido> itens;
     private String status;
 
+    public void adicionarItem(ItemPedido item) {
+        itens.add(item);
+    }
+
     public Pedido() {
         itens =  new ArrayList<>();
     }
@@ -65,6 +69,10 @@ public class Pedido implements Serializable {
 
     public double getValorTotal() {
         return valorTotal;
+    }
+
+    public void setValorTotal(double valorTotal) {
+        this.valorTotal = valorTotal;
     }
 
     public ArrayList<ItemPedido> getItens() {

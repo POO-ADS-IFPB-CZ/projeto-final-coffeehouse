@@ -105,6 +105,80 @@ public class TelaRecompensas extends JFrame {
 
         });
 
+        btEditar.addActionListener(e -> {
+
+            int linha = tabela.getSelectedRow();
+
+            if(linha == -1){
+
+            JOptionPane.showMessageDialog(this,
+                "Selecione uma recompensa.");
+
+                return;
+
+        }
+
+            int id = (int) modelo.getValueAt(linha, 0);
+
+            Recompensa recompensa = recompensaDAO.buscar(id);
+
+            recompensa.setNome(txtNome.getText());
+            recompensa.setDescricao(txtDescricao.getText());
+            recompensa.setPontosNecessarios(Integer.parseInt(txtPontos.getText()));
+
+            recompensaDAO.atualizar(recompensa);
+
+            atualizarTabela();
+
+            limparCampos();
+
+        });
+
+        btExcluir.addActionListener(e -> {
+
+            int linha = tabela.getSelectedRow();
+
+            if(linha == -1){
+
+            JOptionPane.showMessageDialog(this,
+                "Selecione uma recompensa.");
+
+                return;
+
+        }
+
+            int id = (int) modelo.getValueAt(linha,0);
+
+            recompensaDAO.excluir(id);
+
+            atualizarTabela();
+
+            limparCampos();
+
+        });
+
+        btLimpar.addActionListener(e -> {
+
+            limparCampos();
+
+        });
+
+        tabela.getSelectionModel().addListSelectionListener(e -> {
+
+            int linha = tabela.getSelectedRow();
+
+            if(linha != -1){
+
+            txtNome.setText(modelo.getValueAt(linha,1).toString());
+
+            txtDescricao.setText(modelo.getValueAt(linha,2).toString());
+
+            txtPontos.setText(modelo.getValueAt(linha,3).toString());
+
+        }
+
+        });
+
         atualizarTabela();
 
     }

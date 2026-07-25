@@ -38,6 +38,14 @@ public class TelaPrincipal extends JFrame{
             new TelaClientes().setVisible(true);
         });
 
+        btPedidos.addActionListener(e -> {
+            new TelaPedidos().setVisible(true);
+        });
+
+        btProdutos.addActionListener(e -> {
+            new TelaProdutos().setVisible(true);
+        });
+
         btClientes.setBounds(280, 70, 220, 40);
         btProdutos.setBounds(280, 130, 220, 40);
         btFuncionarios.setBounds(280, 190, 220, 40);
